@@ -1,12 +1,86 @@
-*.class
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+/**
+ * Write a description of class task5 here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+import java.util.Scanner;
+import java.io.*;
+import java.util.*;
 
-# Package Files #
-*.jar
-*.war
-*.ear
+public class task5
+{
+    public static void main (String[]args)throws IOException{
+        Scanner input = new Scanner(System.in);
+        System.out.println("1. Search for a term"+"\n"+"2. Search for a keyword in the descriptions"+"\n"+"3. End");
+        int choice = input.nextInt() ;
+        FileReader myFile=new FileReader("U:\\Downloads\\data.txt");
+        BufferedReader br=new BufferedReader(myFile);
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+        
+        if(choice == 1) {
+           SearchByTerm(myFile, br);//initiates function 
+        }
+        else if(choice == 2) {
+           SearchDescriptionsForKeyword(myFile, br);//initiates function
+        }
+        else {
+           System.exit(1);//end
+        } 
+   }
+    public static void SearchByTerm(FileReader myFile, BufferedReader br)throws IOException {//1
+       Scanner input = new Scanner(System.in);
+       System.out.println("Enter Search by Term");
+       String SearchByTerm = input.nextLine();
+       
+       String searchline="";
+       
+       while((searchline = br.readLine()) != null) {
+           boolean found = false;
+           if (SearchByTerm.equals(searchline)) {
+               searchline = br.readLine();
+               System.out.println(searchline);
+               found = true;
+               break;
+               
+           }
+           if (found == true){
+               System.out.println("Item Found");
+            }
+           else{
+               System.out.println("Item Not Found");//shows the amount of lines it checks
+            }
+       }
+   }
+   public static void SearchDescriptionsForKeyword(FileReader myFile, BufferedReader br)throws IOException {
+       Scanner input = new Scanner(System.in);
+       System.out.println("Enter Search for keyword");
+       String Keyword = input.nextLine();
+       
+       String first="";
+       String second="";
+       
+
+       while((first = br.readLine()) != null) {
+           second = br.readLine();
+           boolean found = false;
+           if (second.contains(Keyword)) {
+               System.out.println(first);
+               System.out.println(second);
+               found = true;
+               break;
+           }
+           if (found==true){
+              System.out.println("Item Found");
+            }
+            else{
+              System.out.println("Item not found");//shows the amount of lines it checks
+            }
+       }
+   }
+   }           
+    
+        
+
+            
