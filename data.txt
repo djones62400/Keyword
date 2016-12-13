@@ -1,0 +1,20 @@
+syntax
+the arrangement of words and phrases to create well-formed sentences in a language.
+hard drive
+a disk drive used to read from and write to a hard disk.
+keyboard
+an input device that allows the user to enter data by means of a keyboard.
+ram
+is a type of computer memory that can be accessed randomly.
+speakers
+an output device that are transducers that convert electromagnetic waves into sound waves.
+encoding
+is the process of transforming a set of Unicode characters into a sequence of bytes.
+decoding
+to translate data from code into the original language.
+fde
+An instruction cycle that is the basic operational process of a computer.
+webcam
+a video camera connected to a computer allowing its images to be seen by internet users.
+mouse
+a small handheld device which is moved across a mat or flat surface to move the cursor on a computer screen.
